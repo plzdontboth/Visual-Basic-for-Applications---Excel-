@@ -1,0 +1,16 @@
+' Adds date in next blank cell in column A 
+' The column can be modified to suit your needs 
+
+Sub AddDateToAllSheets()
+    Dim ws As Worksheet
+    Dim lastRow As Long
+    
+    ' Loop through each worksheet in the workbook
+    For Each ws In ThisWorkbook.Worksheets
+        ' Find the last non-empty row in column A
+        lastRow = ws.Cells(ws.Rows.Count, "A").End(xlUp).Row
+        
+        ' Add "Next_month" to the next empty cell in column A
+        ws.Cells(lastRow + 1, 1).Value = "May'26"
+    Next ws
+End Sub

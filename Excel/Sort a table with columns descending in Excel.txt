@@ -1,0 +1,10 @@
+' To sort a table with columns in Excel 
+' You can replace the column character H to any other character 
+' You can replace the descending order to ascending to change sorting 
+Sub SortColumnHDescendingAllSheets()
+    Dim ws As Worksheet
+    
+    For Each ws In ThisWorkbook.Sheets
+        ws.Range("H:H").Sort Key1:=ws.Range("H1"), Order1:=xlDescending, Header:=xlYes
+    Next ws
+End Sub

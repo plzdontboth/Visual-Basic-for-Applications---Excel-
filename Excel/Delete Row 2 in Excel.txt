@@ -1,0 +1,9 @@
+' Netapp CLI Output contains lines if pasted on a excel sheet in Row 2 
+' Code specific to delete Row 2 in excel 
+
+Sub DeleteRow2InAllSheets()
+    Dim ws As Worksheet
+    For Each ws In ThisWorkbook.Worksheets
+        ws.Rows(2).Delete
+    Next ws
+End Sub

@@ -1,0 +1,10 @@
+Sub ApplyTextToColumns()
+    Dim ws As Worksheet
+
+    For Each ws In ThisWorkbook.Worksheets
+        ws.Columns("A").TextToColumns Destination:=ws.Range("A1"), DataType:=xlDelimited, _
+            TextQualifier:=xlDoubleQuote, ConsecutiveDelimiter:=True, _
+            Tab:=False, Semicolon:=False, Comma:=False, Space:=True, Other:=False, _
+            FieldInfo:=Array(Array(1, 1))
+    Next ws
+End Sub

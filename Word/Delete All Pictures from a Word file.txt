@@ -1,0 +1,6 @@
+Sub DeleteAllPictures()
+    Dim pic As Picture
+    For Each pic In ActiveSheet.Pictures
+        pic.Delete
+    Next pic
+End Sub

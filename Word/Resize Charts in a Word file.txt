@@ -1,0 +1,10 @@
+' Usecase - If you have multiple charts in a word document and want to resize them to the standard readable size 
+Sub ResizeAllImages()
+    Dim i As Integer
+    For i = 1 To ActiveDocument.InlineShapes.Count
+        With ActiveDocument.InlineShapes(i)
+            .LockAspectRatio = msoTrue
+            .Width = InchesToPoints(6.5)
+        End With
+    Next i
+End Sub
