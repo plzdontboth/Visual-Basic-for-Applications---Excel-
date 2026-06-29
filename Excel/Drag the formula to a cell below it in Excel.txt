@@ -5,14 +5,11 @@ Sub CopyFormulaToNextRow()
     Dim ws As Worksheet
     Dim lastRow As Long
 
-    ' Loop through each worksheet in the workbook
     For Each ws In ThisWorkbook.Sheets
-        ' Find the last row with data in column D
         lastRow = ws.Cells(ws.Rows.Count, 4).End(xlUp).Row
 
         ' Check if the last cell in column D has a formula
         If ws.Cells(lastRow, 4).HasFormula Then
-            ' Copy the formula to the cell below
             ws.Cells(lastRow, 4).AutoFill Destination:=ws.Cells(lastRow, 4).Resize(2, 1), Type:=xlFillDefault
         End If
     Next ws
