@@ -5,9 +5,7 @@ Sub AddDateToAllSheets()
     Dim ws As Worksheet
     Dim lastRow As Long
     
-    ' Loop through each worksheet in the workbook
     For Each ws In ThisWorkbook.Worksheets
-        ' Find the last non-empty row in column A
         lastRow = ws.Cells(ws.Rows.Count, "A").End(xlUp).Row
         
         ' Add "Next_month" to the next empty cell in column A
